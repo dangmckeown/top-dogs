@@ -55,5 +55,5 @@ var dogs = {
 
 
 function testOne() {
-    console.log(afghan.work_ethic.upper);
+    console.log(dogs.afghan.work_ethic.upper);
 }
