@@ -54,15 +54,23 @@
   <!-- STUFF IS MEANT TO GO HERE-->
   <script>
     $(document).ready(function(){
-      $.ajax({url: "top-dogs.json", success: function(result){
-        console.log(result);
-      }});
+      //get a doggo
+      var playerDog = exampleDog;
+      $( ".player-dog-image" ).attr("src", playerDog.img);
+      $(".player-dog-bark").on("click", function(){playerDog.bark()});
+      $( ".player-dog-attributes ").append("<li>Weight: <span data-attribute='weight'>" + playerDog.weight + "</span></li>");
+      $( ".player-dog-attributes ").append("<li>Work ethic: <span data-attribute='work-ethic'>" + playerDog.work_ethic + "</span></li>");
+      $( ".player-dog-attributes ").append("<li>Woofiness: <span data-attribute='woofiness'>" + playerDog.woofiness + "</span></li>");
+      $( ".player-dog-attributes ").append("<li>Winsomeness: <span data-attribute='winsomeness'>" + playerDog.winsomeness + "</span></li>");
+      $( ".player-dog-attributes ").append("<li>Wagginess: <span data-attribute='wagginess'>" + playerDog.wagginess + "</span></li>");
+      $( ".player-dog-attributes ").append("<li>Wisdom: <span data-attribute='wisdom'>" + playerDog.wisdom + "</span></li>");
+    
     });
     
   </script>
   
 </head>
-<body onclick="testOne()">
+<body>
   
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="check" viewBox="0 0 16 16">
@@ -102,14 +110,10 @@
             </div>
             <div class="card-body">
               <h1 class="card-title pricing-card-title">Craig</h1>
-              <img style="width:100%;" src="/static/images/Afghan_dog_-_cropped.jpeg" class="rounded-circle" alt="Afghan Hound">
-              <ul class="list-unstyled mt-3 mb-4">
-                <li class="weight">Weight: 0</li>
-                <li class="winsomeness">Winsomeness: 0</li>
-                <li class="work-ethic">Work ethic: 0</li>
-                <li class="woofiness">Woofiness: 0</li>
+              <img style="width:100%;" src="/static/images/Afghan_dog_-_cropped.jpeg" class="player-dog-image rounded-circle" alt="Afghan Hound">
+              <ul class="player-dog-attributes list-unstyled mt-3 mb-4">
               </ul>
-              <button type="button" onclick="dogs.afghan.bark()" class="w-100 btn btn-lg btn-outline-primary">Bark!</button>
+              <button type="button" class="player-dog-bark w-100 btn btn-lg btn-outline-primary">Bark!</button>
             </div>
           </div>
         </div>
